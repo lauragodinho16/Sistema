@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+
    
    <!-- Referência ao bootstrap -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
@@ -13,8 +14,8 @@
    <link rel="shortcut icon" href="favicon.png" />
  
 
-    <title > Página Inicial / Site da Laura </title>
-    <nav class="navbar  navbar-expand-lg navbar-dark " style="background-color: #DF7976 ;" >
+    <title >Página Inicial</title>
+    <nav class="navbar  navbar-expand-lg navbar-dark " style="background-color: #DF7976 ; width: auto" >
     
         <div class="container">
     
@@ -53,42 +54,105 @@
 
  <!----------------------------P Á G I N A    I N I C I A L----------------------------> 
 <body style="background-color: #FDC694;" >
-<div id="interface"   >
-   <h3 style="text-align: center; align-items: center; margin-top: 2%;" class="leaad" >Finanças do Claudim </h3>
+<div id="interface"  >
+   <h3 style="text-align: center; align-items: center; margin-top: 2%; width: auto;" class="leaad" >Finanças do Claudim </h3>
   <p></p>
 
 <div class="container" style="width: 40%; height: 40%; margin-top: 2%;" >  
         
 
     <div class="input-group mb-3">
-         <span class="input-group-text" id="basic-addon1" style ="width: 20%" >Orçamento</span>
-         <input type="text" class="form-control" placeholder="Valor" aria-label="Valor" aria-describedby="basic-addon1" style ="text-align: center;">
+         <span class="input-group-text" id="basic-addon1" style ="width: 20%; border: 1px solid black; border-collapse: collapse;" >Orçamento</span>
+         <input type="text" class="form-control" placeholder="Valor" aria-label="Valor" aria-describedby="basic-addon1" style ="margin-left: 2% ;text-align: center; border: 1px solid black; border-collapse: collapse;">
     </div>
 
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1" style ="width: 20%;">Saldo</span>
-        <input type="text" class="form-control" placeholder="Valor" aria-label="Valor" aria-describedby="basic-addon1" style ="text-align: center;">
+    <div class="input-group mb-3" >
+        <span class="input-group-text" id="basic-addon1" style ="text-align: center ;width: 20%; border: 1px solid black; border-collapse: collapse;">Saldo</span>
+        <input type="text" class="form-control" placeholder="Valor" aria-label="Valor" aria-describedby="basic-addon1" style ="margin-left: 2% ;text-align: center; border: 1px solid black; border-collapse: collapse;">
    </div>
 
 </div>  
 
 <div class="container" style="width: 80%; height: 40%; margin-left: 25%; margin-top: 5%; align-items: center; display: flex; text-align: center;"  >  
-    <div class="card" style="width: 25%;">
+    <div class="card" style="width: 25%; border: 1px solid black; border-collapse: collapse;">
         <div class="card-body">
           <h5 class="card-title">Gastos</h5>
-          <a href="#" class="btn btn-primary">Ver Tabela</a>
+          <a href="#gastosInicial" class="btn btn-secondary">Ver Tabela</a>
         </div>
       </div>   
 
-      <div class="card" style="width: 25%; margin-left: 10%">
+      <div class="card" style="width: 25%; margin-left: 10%;border: 1px solid black; border-collapse: collapse;">
         <div class="card-body">
           <h5 class="card-title">Dívidas</h5>
-          <a href="#" class="btn btn-primary">Ver Tabela</a>
+          <a href="#dividasInicial" class="btn btn-secondary">Ver Tabela</a>
         </div>
       </div>   
 
 </div>  
 
+<div style="text-align: center; margin-top: 5%;">
+  <h2>Gastos</h2>
+</div>
+  
+<div id="gastosInicial" class="container" style="width: 80%; height: auto; margin-left: 10%; margin-top: 2%; align-items: center; display: flex; text-align: center;"  >  
+ 
+  <table class="table table-dark", style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+      <th>Data</th>
+      <th>Desconto</th>
+      <th>Valor</th>
+    </tr>
+    {%for gastos in gastos_front %}
+    <tr>
+      <th scope="row">{{gastos.id}}</th>
+      <td>{{gastos.data}}</td>
+      <td>{{gastos.desconto}}</td>
+      <td>{{gastos.valor}}</td>
+      <td>
+        <a href=" "></a>
+        <a href=" "></a>
+        <a href=" "></a>
+        <!--icons em front awesome-->
+      </td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td> - </td>
+      <td> - </td>
+      <td> - </td>
+    </tr>
+  </table>
+
+</div>  
+
+<div style="text-align: center; margin-top: 5%;">
+  <h2>Dívidas</h2>
+</div>
+  
+<div id="dividasInicial" class="container" style="width: 80%; height: auto; margin-left: 10%; margin-top: 2%; align-items: center; display: flex; text-align: center;"  >  
+ 
+  <table class="table table-dark", style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Pagar/Receber</th>
+      <th>Valor</th>
+    </tr>
+    <tr>
+      <td> - </td>
+      <td> - </td>
+      <td> - </td>
+      <td> - </td>
+    </tr>
+    <tr>
+      <td> - </td>
+      <td> - </td>
+      <td> - </td>
+      <td> - </td>
+    </tr>
+  </table>
+
+</div> 
 
 
 
